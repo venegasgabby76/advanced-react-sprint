@@ -52,4 +52,8 @@ test("form shows success message on submit with form details", () => {
     //zip code 
     const zipInput = screen.getByLabelText(/zip/i);
     fireEvent.change(zipInput, {target: {value: '66666'}});
+
+    //submit button
+    const clickCheckout = screen.getByText("Checkout")
+    fireEvent.click(clickCheckout);
 });
