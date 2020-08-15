@@ -25,7 +25,7 @@ const CheckoutForm = (props) => {
   // };
 
   const handleSubmit = (e) => {
-    e.preventDefault(values);
+    e.preventDefault();
     setShowSuccessMessage(true);
   };
 

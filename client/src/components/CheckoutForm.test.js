@@ -56,4 +56,9 @@ test("form shows success message on submit with form details", () => {
     //submit button
     const clickCheckout = screen.getByText("Checkout")
     fireEvent.click(clickCheckout);
+
+    //checking to see that the full form is completed and on the page.
+    const plantsOrdered = screen.getByTestId(/successMessage/i)
+    expect(plantsOrdered).toBeInTheDocument();
+
 });
