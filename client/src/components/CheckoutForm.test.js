@@ -24,6 +24,32 @@ test("form header renders", () => {
 //lastly need to check and make sure that the actually message will show up on the bottom of the page.
 test("form shows success message on submit with form details", () => {
 
-    //Arrange
     render(<CheckoutForm />)
+
+    //type into the input fields 
+    // we want to query for those inout and then run the changes
+
+    //first name
+    const firstNameInput = screen.getByLabelText(/first name/i);
+    fireEvent.change(firstNameInput, {target: {value: 'Jane'}});
+
+    //last name
+    const lastNameInput = screen.getByLabelText(/last name/i);
+    fireEvent.change(lastNameInput, {target: {value: 'Doe'}});
+
+    //address
+    const addressInput = screen.getByLabelText(/address/i);
+    fireEvent.change(addressInput, {target: {value: '666 Salem'}});
+
+    //city
+    const cityInput = screen.getByLabelText(/city/i);
+    fireEvent.change(cityInput, {target: {value: 'Jerusalem'}});
+
+    //state
+    const stateInput = screen.getByLabelText(/state/i);
+    fireEvent.change(stateInput, {target: {value: 'Oregon'}});
+
+    //zip code 
+    const zipInput = screen.getByLabelText(/zip/i);
+    fireEvent.change(zipInput, {target: {value: '66666'}});
 });
